@@ -1,0 +1,67 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.indielink.indielink.CardDetailForBandFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true" />
+
+
+        <TextView
+            android:id="@+id/Aboutme"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AboutMyBand"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/Vacancy"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Vacancy"
+            android:layout_marginTop="44dp"
+            android:layout_below="@+id/Aboutme"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Apply"
+            android:id="@+id/button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/EditTextAboutMe"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BandName"
+        android:layout_weight="0.06" />
+
+
+
+
+</LinearLayout>

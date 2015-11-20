@@ -1,0 +1,73 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.indielink.indielink.banddetail"
+    android:weightSum="1"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true" />
+
+
+        <TextView
+            android:id="@+id/TextViewAboutMe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AboutMe"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/Vacancy"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Vacancy"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="44dp" />
+
+
+
+
+
+
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Idenitity: Myself/Band"
+            android:gravity="bottom|center"
+            android:id="@+id/switch3"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/EditTextAboutMe"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BandName"
+        android:layout_weight="0.06" />
+
+
+
+
+</LinearLayout>

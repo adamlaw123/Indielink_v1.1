@@ -48,21 +48,23 @@ public class SearchFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
+        arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.item, R.id.helloText, al);
 
         ButterKnife.inject(this,view);
 
 
         al = new ArrayList<>();
-        al.add("php");
-        al.add("c");
-        al.add("python");
-        al.add("java");
-        al.add("html");
-        al.add("c++");
-        al.add("css");
-        al.add("javascript");
+        al.add("Muse");
+        al.add("Beatles");
+        al.add("Oasis");
+        al.add("Blur");
+        al.add("Guns N' roses");
+        al.add("Libertines");
 
         arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.item, R.id.helloText, al);
+
+
+
 
 
         flingContainer.setAdapter(arrayAdapter);
@@ -80,18 +82,18 @@ public class SearchFragment extends Fragment {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-              //  makeToast(SearchFragment.this, "Left!");
+               //makeToast(SearchFragment.this, "Left!");
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-               // makeToast(SearchFragment.this, "Right!");
+               //makeToast(SearchFragment.this, "Right!");
             }
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-                al.add("XML ".concat(String.valueOf(i)));
+                al.add("Band ".concat(String.valueOf(i)));
                 arrayAdapter.notifyDataSetChanged();
                 Log.d("LIST", "notified");
                 i++;
@@ -110,7 +112,7 @@ public class SearchFragment extends Fragment {
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-              //  makeToast(SearchFragment.this, "Clicked!");
+               //makeToast(SearchFragment.this, "Clicked!");
             }
         });
         return view;
