@@ -28,6 +28,7 @@ public class ProfileContent {
     public static Map<String, ProfileItem> ITEM_MAP = new HashMap<String, ProfileItem>();
     public static String ProfilePictureURL;
 
+
     public static void InitializeProfile(JSONObject object)
     {
         try {

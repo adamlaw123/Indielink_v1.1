@@ -17,13 +17,19 @@ import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.indielink.indielink.Profile.ProfileContent;
+import com.indielink.indielink.Profile.UserRole;
 import org.json.JSONObject;
 
 public class RootPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        UserRole.IsMusician();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_root_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -135,6 +141,10 @@ public class RootPage extends AppCompatActivity
             }
             case (R.id.band1):
             {
+                if(CurrentFragment != "BandProfile") {
+                    fragmentTransaction.addToBackStack("BandProfile");
+                    fragment = new BandProfileFragment();
+                }
                 break;
             }
             case (R.id.band2):
