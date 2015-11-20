@@ -15,13 +15,13 @@ import java.net.URL;
  * Created by a-kele on 11/10/2015.
  * logic for getting facebook profile pic and stored it in memory
  */
-public class GetFacebookProfilePicture extends AsyncTask<Void, Void, Drawable> {
+public class GetProfilePicture extends AsyncTask<Void, Void, Drawable> {
 
     private final String mUrl;
     private ImageView pic ;
     private Drawable result;
 
-    public GetFacebookProfilePicture(String url, ImageView ProfilePicture){
+    public GetProfilePicture(String url, ImageView ProfilePicture){
         mUrl = url;
         pic = ProfilePicture;
     }

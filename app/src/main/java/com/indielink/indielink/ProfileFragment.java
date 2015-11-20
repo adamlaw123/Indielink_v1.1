@@ -12,13 +12,11 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.indielink.indielink.Network.GetFacebookProfilePicture;
+import com.indielink.indielink.Network.GetProfilePicture;
 import com.indielink.indielink.Profile.ProfileContent;
 
 
@@ -80,7 +78,7 @@ public class ProfileFragment extends Fragment implements AbsListView.OnItemClick
 
         // Set Profile Image
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.ProfilePicture);
-        new GetFacebookProfilePicture(ProfileContent.ProfilePictureURL,ProfilePicture).execute();
+        new GetProfilePicture(ProfileContent.ProfilePictureURL,ProfilePicture).execute();
 
         // Set Profile Content
         mAdapter = new ArrayAdapter<ProfileContent.ProfileItem>(getActivity(),
