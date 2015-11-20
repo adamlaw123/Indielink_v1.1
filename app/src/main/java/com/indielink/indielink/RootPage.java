@@ -150,7 +150,7 @@ public class RootPage extends AppCompatActivity
                 break;
             }
         }
-        if (fragment != null || id != R.id.Profile) {
+        if (fragment != null && id != R.id.Profile) {
             fragmentTransaction.replace(R.id.frame_container, fragment);
             fragmentTransaction.commit();
         }

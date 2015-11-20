@@ -3,7 +3,7 @@ package com.indielink.indielink.Profile;
 import android.text.format.Time;
 
 import com.facebook.Profile;
-import com.indielink.indielink.Network.GetFacebookProfilePicture;
+import com.indielink.indielink.Network.GetProfilePicture;
 
 import org.json.JSONObject;
 
@@ -55,7 +55,7 @@ public class ProfileContent {
             if(url != ProfilePictureURL && !url.isEmpty())
             {
                 ProfilePictureURL = url;
-                new GetFacebookProfilePicture(ProfileContent.ProfilePictureURL,null).execute();
+                new GetProfilePicture(ProfileContent.ProfilePictureURL,null).execute();
             }
             return;
         }
