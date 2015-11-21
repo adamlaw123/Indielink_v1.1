@@ -19,11 +19,10 @@
     <string name="Search">Search</string>
     <string name="Music">Music</string>
     <string name="CreateBand">CreateBand</string>
-
+    <string name="Default">/</string>
     <!-- edit profile-->
-    <string name="Age">Age :</string>
+
     <string name="EditProfile">Edit Profile</string>
-    <string name="AboutMe">About me:</string>
     <string name="Instrument">Instrument</string>
     <string name="Vocal">Vocal</string>
     <string name="Guitar">Guitar</string>
@@ -32,10 +31,15 @@
     <string name="Others">Others</string>
     <string name="Bass">Bass</string>
     <string name="SubmitChange">Submit</string>
-    <string name="Vacancy">Vacancy:</string>
-    <string name="Name">Name</string>
     <string name="Detail">My Detail</string>
-    <string name="Recruit">recruit</string>
-    <string name="AboutMyBand">About My Band:</string>
+    <string name="Recruit">Recruit</string>
     <string name="Apply">Apply</string>
+
+    <string name="Name">Name :</string>
+    <string name="Age">Age :</string>
+    <string name="Gender">Gender :</string>
+    <string name="AboutMe">About me :</string>
+    <string name="AboutMyBand">About My Band:</string>
+    <string name="Vacancy">Vacancy :</string>
+
 </resources>

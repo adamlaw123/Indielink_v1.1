@@ -33,15 +33,13 @@ public class BandProfileFragment extends Fragment {
         RoleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged (CompoundButton buttonView,boolean isChecked){
-                Log.v("Switch State=", "" + isChecked);
                 if (isChecked) {
-                    Toast.makeText(getActivity(), "Band Admin", Toast.LENGTH_SHORT);
                     UserRole.IsBand();
                 }
                 else {
                     UserRole.IsMusician();
-                    Toast.makeText(getActivity(), "Musician", Toast.LENGTH_SHORT);
                 }
+                Log.v("Switch State=", "" + UserRole.GetUserRole());
             }
         });
         return view;

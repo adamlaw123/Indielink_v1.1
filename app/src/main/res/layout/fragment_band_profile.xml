@@ -21,7 +21,6 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true" />
 
-
         <TextView
             android:id="@+id/BandAboutMe"
             android:layout_width="fill_parent"
@@ -29,17 +28,18 @@
             android:text="@string/AboutMe"
             android:layout_below="@+id/BandProfilePicture"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            />
 
         <TextView
             android:id="@+id/BandVacancy"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/Vacancy"
-            android:layout_below="@+id/BandProfilePicture"
+            android:layout_below="@+id/BandAboutMe"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="44dp" />
+            />
 
         <Switch
             android:id="@+id/ChangeRole"

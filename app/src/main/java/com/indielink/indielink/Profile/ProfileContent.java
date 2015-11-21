@@ -20,24 +20,16 @@ import java.util.Map;
  */
 public class ProfileContent {
 
-    /**
-     * An array of sample (dummy) items.
-     */
-
-    public static List<ProfileItem> ITEMS = new ArrayList<ProfileItem>();
-    public static Map<String, ProfileItem> ITEM_MAP = new HashMap<String, ProfileItem>();
+    private static HashMap<String,String> User = new HashMap<String,String>();
     public static String ProfilePictureURL;
-
 
     public static void InitializeProfile(JSONObject object)
     {
         try {
+            //get url from Fackbook Graph API
             String url = object.getJSONObject("picture").getJSONObject("data").getString("url");
-            if(ITEMS.size()==0 || ITEM_MAP.size()==0)
+            if(User.size()==0)
             {
-                ITEMS = new ArrayList<ProfileItem>();
-                ITEM_MAP = new HashMap<String, ProfileItem>();
-
                 String gender = object.get("gender").toString();
                 int birth = Integer.parseInt(object.get("birthday").toString().substring(6, 10));
                 Time currentTime = new Time();
@@ -45,13 +37,13 @@ public class ProfileContent {
                 String age = String.valueOf(currentTime.year-birth);
 
                 Profile profile = Profile.getCurrentProfile();
-                addItem(new ProfileItem("1", "Name : "));
-                addItem(new ProfileItem("2", profile.getName()));
-                addItem(new ProfileItem("3", "Age :"));
-                addItem(new ProfileItem("4", age));
-                addItem(new ProfileItem("5", "Gender :"));
-                addItem(new ProfileItem("6",gender));
-                //addItem(new ProfileItem("7", "About Me :")); //commented out for debug purpose
+                User.put("UserName",profile.getName());
+                User.put("UserAge", age);
+                User.put("UserGender",gender);
+
+                //TODO: HTTP POST to server to get user information
+                User.put("Instrument","");
+                User.put("AboutMe","");
             }
             if(url != ProfilePictureURL && !url.isEmpty())
             {
@@ -65,26 +57,8 @@ public class ProfileContent {
         }
     }
 
-    public static void addItem(ProfileItem item) {
-        ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
-    }
-
-    /**
-     * A dummy item representing a piece of content.
-     */
-    public static class ProfileItem {
-        public String id;
-        public String content;
-
-        public ProfileItem(String id, String content) {
-            this.id = id;
-            this.content = content;
-        }
-
-        @Override
-        public String toString() {
-            return content;
-        }
+    public static HashMap<String,String> GetUserProfile()
+    {
+        return User;
     }
 }

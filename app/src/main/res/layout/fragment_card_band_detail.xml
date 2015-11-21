@@ -35,15 +35,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Name"
-                android:layout_below="@+id/BandProfilePicture"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_below="@+id/BandProfilePicture" />
 
             <TextView
                 android:id="@+id/BandVacancy"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="@string/Vacancy"
                 android:layout_below="@+id/BandName"
                 android:layout_alignParentLeft="true"
