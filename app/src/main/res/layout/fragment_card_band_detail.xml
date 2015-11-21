@@ -56,13 +56,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/Vocal"/>
+                    android:text="@string/Vocal"
+                    android:checked="false"
+                    android:clickable="false"
+                    android:focusable="true" />
 
                 <CheckBox
                     android:id="@+id/CheckGuitar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:focusable="true"
+                    android:clickable="false"
                     android:text="@string/Guitar"/>
 
             </TableRow>
@@ -74,11 +79,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:focusable="true"
+                    android:clickable="false"
                     android:text="@string/Bass"/>
                 <CheckBox
                     android:id="@+id/CheckDrum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:clickable="false"
                     android:layout_weight="1"
                     android:text="@string/Drum"/>
 
@@ -91,12 +100,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:focusable="true"
+                    android:clickable="false"
                     android:text="@string/Keyboard"/>
                 <CheckBox
                     android:id="@+id/CheckOthers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:focusable="true"
+                    android:clickable="false"
                     android:text="@string/Others"/>
             </TableRow>
 
@@ -110,10 +123,6 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
         </TableLayout>
-
-
-
-
 
         <Button
             android:layout_width="match_parent"

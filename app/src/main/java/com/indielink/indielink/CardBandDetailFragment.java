@@ -27,8 +27,6 @@ public class CardBandDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -36,6 +34,7 @@ public class CardBandDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_card_band_detail, container, false);
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.BandProfilePicture);
+
 
 
 
