@@ -14,9 +14,9 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ImageView"
-            android:layout_width="320dp"
-            android:layout_height="320dp"
+            android:id="@+id/MusicianProfilePicture"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
@@ -28,40 +28,36 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/Name"
-            android:layout_below="@+id/ImageView"
+            android:layout_below="@+id/MusicianProfilePicture"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <TextView
+            android:id="@+id/Age"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Age"
+            android:layout_below="@+id/Name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:id="@+id/Detail"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Detail"
-            android:layout_below="@+id/Name"
+            android:text="@string/AboutMe"
+            android:layout_below="@+id/Age"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="38dp" />
-
-
-
+            android:layout_marginTop="20dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recruit"
-            android:id="@+id/button"
+            android:text="@string/Recruit"
+            android:id="@+id/RecruitButton"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
-
-
-    <EditText
-        android:id="@+id/EditTextAboutMe"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="BandName"
-        android:layout_weight="0.06" />
-
 </LinearLayout>

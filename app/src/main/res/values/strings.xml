@@ -21,6 +21,7 @@
     <string name="CreateBand">CreateBand</string>
 
     <!-- edit profile-->
+    <string name="Age">Age :</string>
     <string name="EditProfile">Edit Profile</string>
     <string name="AboutMe">About me:</string>
     <string name="Instrument">Instrument</string>
@@ -34,7 +35,7 @@
     <string name="Vacancy">Vacancy:</string>
     <string name="Name">Name</string>
     <string name="Detail">My Detail</string>
-    <string name="recruit">recruit</string>
-    <string name="AboutMyBand">About My Band</string>
+    <string name="Recruit">recruit</string>
+    <string name="AboutMyBand">About My Band:</string>
     <string name="Apply">Apply</string>
 </resources>

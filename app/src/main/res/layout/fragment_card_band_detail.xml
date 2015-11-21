@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.indielink.indielink.BandProfileFragment"
+    android:orientation="vertical"
     android:weightSum="1"
-    android:orientation="vertical" >
+    tools:context="com.indielink.indielink.CardBandDetailFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    <ScrollView android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/BandProfilePicture"
             android:layout_width="240dp"
@@ -20,13 +20,21 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true" />
 
-
         <TextView
-            android:id="@+id/BandAboutMe"
+            android:id="@+id/AboutMe"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/AboutMe"
+            android:text="@string/AboutMyBand"
             android:layout_below="@+id/BandProfilePicture"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/AboutMeContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AboutMyBand"
+            android:layout_below="@+id/AboutMe"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -34,20 +42,19 @@
             android:id="@+id/BandVacancy"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Vacancy"
-            android:layout_below="@+id/BandProfilePicture"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/AboutMeContent"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="44dp" />
+            android:layout_alignParentStart="true" />
 
-        <Switch
-            android:id="@+id/ChangeRole"
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Idenitity: Myself/Band"
-            android:gravity="bottom|center"
-            android:layout_gravity="bottom"
+            android:text="@string/Apply"
+            android:id="@+id/RecruitButton"
+            android:layout_below="@+id/BandVacancy"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 </LinearLayout>

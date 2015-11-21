@@ -9,14 +9,16 @@
     android:orientation="vertical"
     tools:context="com.indielink.indielink.ProfileFragment">
 
-
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
             android:id="@+id/ProfilePicture"
-            android:layout_width="320dp"
-            android:layout_height="320dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
@@ -37,6 +39,6 @@
             android:theme="@style/AppTheme.AppBarOverlay"
             android:text="@string/EditProfile"
             android:layout_below="@android:id/list"/>
-
     </RelativeLayout>
+    </ScrollView>
 </LinearLayout>

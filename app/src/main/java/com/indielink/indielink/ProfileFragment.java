@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.indielink.indielink.Network.GetProfilePicture;
@@ -74,7 +75,7 @@ public class ProfileFragment extends Fragment implements AbsListView.OnItemClick
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item_grid, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Set Profile Image
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.ProfilePicture);
