@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.indielink.indielink.ProfileFragment">
+    android:paddingTop="?android:attr/actionBarSize"
+    tools:context="com.indielink.indielink.ProfileFragment"
+    android:id="@+id/carddetail">
 
 
     <RelativeLayout

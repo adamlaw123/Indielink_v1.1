@@ -6,6 +6,8 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -113,6 +115,16 @@ public class SearchFragment extends Fragment {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
                //makeToast(SearchFragment.this, "Clicked!");
+
+                //FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                //fragmentTransaction.add(R.id.carddetail,CardDetailFragment.newInstance());
+
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().addToBackStack("CardDetail")
+                        .replace(R.id.frame_container, new CardDetailFragment()).commit();
+
+                Log.d("LIST", "clicked");
             }
         });
         return view;
