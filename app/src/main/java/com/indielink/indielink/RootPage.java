@@ -1,5 +1,6 @@
 package com.indielink.indielink;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,50 +13,74 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
+import android.view.View;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.indielink.indielink.Profile.BandProfileContent;
 import com.indielink.indielink.Profile.ProfileContent;
 import com.indielink.indielink.Profile.UserRole;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class RootPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    FragmentTransaction fragmentTransaction;
+    FragmentManager fragmentManager;
 
+    BandProfileContent band1 = new BandProfileContent("Band1");
+    BandProfileContent band2 = new BandProfileContent("Band2");
+    ArrayList<BandProfileContent> UserBand = new ArrayList<BandProfileContent>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        UserRole.IsMusician();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_root_page);
+
+        //TODO: HTTP POST Request for User's band info.  the below is hardcoded testing
+
+        UserBand.add(band1);
+        UserBand.add(band2);
+
+        UserRole.IsMusician();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu NavDrawer = navigationView.getMenu();
+        //SubMenu MyBand = NavDrawer.addSubMenu(0,1,0,"My Band");
+        int order = 0;
+        for(BandProfileContent userBand : UserBand)
+        {
+            NavDrawer.add(0, userBand.BandName.hashCode(), order, userBand.BandName).setIcon(getResources().
+                    getDrawable(R.drawable.abc_ic_menu_moreoverflow_mtrl_alpha));
+        }
         navigationView.setNavigationItemSelectedListener(this);
+
         //Initial fragment when starting the app
         getSupportFragmentManager().beginTransaction().addToBackStack("Search")
         .replace(R.id.frame_container, new SearchFragment()).commit();
     }
 
+    //Back-Press handler
     @Override
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
         }
-        //    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout
-        //        if (drawer.isDrawerOpen(GravityCompat.START)) {
-        //        drawer.closeDrawer(GravityCompat.START);}
         else {
             super.onBackPressed();
         }
@@ -80,9 +105,6 @@ public class RootPage extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
-    FragmentTransaction fragmentTransaction;
-    FragmentManager fragmentManager;
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -110,8 +132,6 @@ public class RootPage extends AppCompatActivity
                                     ProfileContent.InitializeProfile(object);
                                     fragmentManager.beginTransaction().addToBackStack("Profile")
                                             .replace(R.id.frame_container, fragment).commit();
-                                    //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                                    //drawer.closeDrawer(GravityCompat.START);
                                 } catch (Exception e) {
                                     throw new RuntimeException(e);
                                 }
@@ -139,18 +159,6 @@ public class RootPage extends AppCompatActivity
                 }
                 break;
             }
-            case (R.id.band1):
-            {
-                if(CurrentFragment != "BandProfile") {
-                    fragmentTransaction.addToBackStack("BandProfile");
-                    fragment = new BandProfileFragment();
-                }
-                break;
-            }
-            case (R.id.band2):
-            {
-                break;
-            }
             case (R.id.CreateBand):
             {
                 if(CurrentFragment != "CreateBand") {
@@ -158,6 +166,17 @@ public class RootPage extends AppCompatActivity
                     fragment = new CreateBandFragment();
                 }
                 break;
+            }
+            default :
+            {
+                for(BandProfileContent userBand : UserBand)
+                {
+                    if(id == userBand.BandName.hashCode() || CurrentFragment != userBand.BandName) {
+                        fragmentTransaction.addToBackStack(userBand.BandName);
+                        fragment = new BandProfileFragment();
+                        break;
+                    }
+                }
             }
         }
         if (fragment != null && id != R.id.Profile) {
@@ -167,5 +186,14 @@ public class RootPage extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void reload() {
+        Intent intent = getIntent();
+        overridePendingTransition(0, 0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(intent);
     }
 }

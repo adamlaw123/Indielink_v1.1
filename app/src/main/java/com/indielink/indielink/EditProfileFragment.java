@@ -77,7 +77,7 @@ public class EditProfileFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_edit_profile, container, false);
 
         //Find the +1 button
-        mSubmitChangeButton = (Button) view.findViewById(R.id.SubmitChange);
+        mSubmitChangeButton = (Button) view.findViewById(R.id.SubmitNewBand);
 
         return view;
     }

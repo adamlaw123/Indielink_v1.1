@@ -44,10 +44,5 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.indielink.indielink.MainActivity" />
         </activity>
-        <activity
-            android:name=".NavigationDrawer"
-            android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
     </application>
 </manifest>

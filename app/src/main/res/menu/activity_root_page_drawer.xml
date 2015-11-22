@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu android:id="@+id/NavBarMenu"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/Profile" android:icon="@android:drawable/ic_menu_camera"
@@ -8,18 +9,15 @@
             android:title="@string/Search" />
         <item android:id="@+id/Music" android:icon="@android:drawable/ic_menu_share"
             android:title="@string/Music" />
+        <item android:id="@+id/CreateBand" android:icon="@android:drawable/ic_input_add"
+            android:title="@string/CreateBand" />
     </group>
 
-    <item android:title="@string/MyBand">
+    <group android:id="@+id/SubMenuMyBand"
+        android:title="@string/MyBand">
         <menu>
-            <item android:id="@+id/band1" android:icon="@android:drawable/ic_menu_send"
-                android:title="band1" />
-            <item android:id="@+id/band2" android:icon="@android:drawable/ic_menu_send"
-                android:title="band2" />
-            <item android:id="@+id/CreateBand" android:icon="@android:drawable/ic_input_add"
-                android:title="@string/CreateBand" />
         </menu>
-    </item>
+    </group>
 
 
 
