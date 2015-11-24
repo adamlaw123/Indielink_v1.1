@@ -35,13 +35,6 @@ public class CardBandDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_card_band_detail, container, false);
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.BandProfilePicture);
 
-
-
-
-
-
-
-
         new GetProfilePicture("URL",ProfilePicture).execute();
         // Inflate the layout for this fragment
         return view;
