@@ -44,7 +44,6 @@ public class RootPage extends AppCompatActivity
         setContentView(R.layout.activity_root_page);
 
         //TODO: HTTP POST Request for User's band info.  the below is hardcoded testing
-
         UserBand.add(band1);
         UserBand.add(band2);
 
@@ -171,9 +170,12 @@ public class RootPage extends AppCompatActivity
             {
                 for(BandProfileContent userBand : UserBand)
                 {
-                    if(id == userBand.BandName.hashCode() || CurrentFragment != userBand.BandName) {
+                    if(id == userBand.BandName.hashCode() && CurrentFragment != userBand.BandName) {
                         fragmentTransaction.addToBackStack(userBand.BandName);
                         fragment = new BandProfileFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("userBand",userBand);
+                        fragment.setArguments(bundle);
                         break;
                     }
                 }

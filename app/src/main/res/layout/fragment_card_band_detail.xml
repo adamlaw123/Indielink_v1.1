@@ -21,21 +21,25 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true" />
 
-
-
-
         <TableLayout android:layout_width="wrap_content"
             android:id="@+id/BandVacancyTable"
             android:layout_height="wrap_content"
             android:stretchColumns="0,1,2"
             android:layout_below="@+id/BandProfilePicture">
 
+            <TableRow>
             <TextView
-                android:id="@+id/BandName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Name"
                 android:layout_below="@+id/BandProfilePicture" />
+
+                <TextView
+                    android:id="@+id/BandName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/BandProfilePicture" />
+            </TableRow>
 
             <TextView
                 android:id="@+id/BandVacancy"
@@ -110,8 +114,8 @@
                     android:text="@string/Others"/>
             </TableRow>
 
+            <TableRow>
             <TextView
-                android:id="@+id/AboutMe"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/AboutMyBand"
@@ -119,6 +123,18 @@
                 android:layout_below="@+id/BandVacancyTable"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/AboutMe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_below="@+id/BandVacancyTable"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </TableRow>
         </TableLayout>
 
         <Button

@@ -1,12 +1,13 @@
 package com.indielink.indielink.Profile;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  * Created by a-kele on 11/22/2015.
  */
 
-public class BandProfileContent
+public class BandProfileContent implements Serializable
 {
     public String BandName;
     public String BandAboutMe;
