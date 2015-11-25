@@ -19,7 +19,7 @@ public class BandProfileContent implements Serializable
         // TODO add parameter after Json is confirm
         this.BandName = Name;
         this.BandAboutMe = "This is a HardCode test";
-        this.BandPictureURL = "URL";
+        this.BandPictureURL = "137.189.97.88";
     }
 }
 

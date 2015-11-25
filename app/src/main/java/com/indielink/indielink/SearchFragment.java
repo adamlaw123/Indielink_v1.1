@@ -21,6 +21,7 @@ import android.widget.ListAdapter;
 import android.widget.Toast;
 import android.support.v4.app.DialogFragment;
 
+import com.indielink.indielink.Profile.UserRole;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
@@ -114,17 +115,20 @@ public class SearchFragment extends Fragment {
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-               //makeToast(SearchFragment.this, "Clicked!");
-
-                //FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                //fragmentTransaction.add(R.id.carddetail,CardDetailFragment.newInstance());
-
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().addToBackStack("CardDetail")
-                        .replace(R.id.frame_container, new CardDetailFragment()).commit();
 
-                Log.d("LIST", "clicked");
+                if(UserRole.GetUserRole()=="")
+                {
+                    fragmentManager.beginTransaction().addToBackStack("CardDetail")
+                            .replace(R.id.frame_container, new CardDetailFragment()).commit();
+                }
+                else
+                {
+                    fragmentManager.beginTransaction().addToBackStack("CardBandDetail")
+                            .replace(R.id.frame_container, new CardBandDetailFragment()).commit();
+                }
+
             }
         });
         return view;

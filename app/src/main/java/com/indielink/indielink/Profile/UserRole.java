@@ -4,20 +4,20 @@ package com.indielink.indielink.Profile;
  * Created by lawFuck on 2015/11/20.
  */
 public class UserRole {
-    private static boolean IsBand;
+    private static String Band;
 
-    public static void IsBand()
+    public static void IsBand(String band)
     {
-        IsBand=true;
+        Band=band;
     }
 
     public static void IsMusician()
     {
-        IsBand=false;
+        Band="";
     }
 
-    public static boolean GetUserRole()
+    public static String GetUserRole()
     {
-        return IsBand;
+        return Band;
     }
 }

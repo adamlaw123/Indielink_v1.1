@@ -67,13 +67,20 @@ public class BandProfileFragment extends Fragment {
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.BandProfilePicture);
         new GetProfilePicture(bandProfileContent.BandPictureURL,ProfilePicture).execute();
 
-
         Switch RoleSwitch = (Switch) view.findViewById(R.id.ChangeRole);
+        if(UserRole.GetUserRole()=="bandProfileContent.BandName")
+        {
+            RoleSwitch.setChecked(true);
+        }
+        else
+        {
+            RoleSwitch.setChecked(false);
+        }
         RoleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged (CompoundButton buttonView,boolean isChecked){
                 if (isChecked) {
-                    UserRole.IsBand();
+                    UserRole.IsBand(bandProfileContent.BandName);
                 }
                 else {
                     UserRole.IsMusician();
