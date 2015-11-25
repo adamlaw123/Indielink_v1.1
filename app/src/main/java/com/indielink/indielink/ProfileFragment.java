@@ -64,6 +64,12 @@ public class ProfileFragment extends Fragment implements AbsListView.OnItemClick
         //Set Gender
         ((TextView) view.findViewById(R.id.UserGender)).setText(user.get("UserGender"));
 
+        //Set Instrument
+        ((TextView) view.findViewById(R.id.UserInstrument)).setText("test");
+
+        //Set AboutMe
+        ((TextView) view.findViewById(R.id.ProfileAboutMe)).setText("test");
+
         // Set button onClick Handler
         final Button button = (Button) view.findViewById(R.id.EditProfile);
         button.setOnClickListener(new View.OnClickListener() {

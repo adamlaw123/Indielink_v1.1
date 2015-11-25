@@ -24,34 +24,78 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true" />
 
-
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="fill_parent"
+        <TableLayout android:layout_width="wrap_content"
+            android:id="@+id/BandVacancyTable"
             android:layout_height="wrap_content"
-            android:text="@string/Name"
-            android:layout_below="@+id/MusicianProfilePicture"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:stretchColumns="0,1,2"
+            android:layout_below="@+id/MusicianProfilePicture">
 
-        <TextView
-            android:id="@+id/Age"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Age"
-            android:layout_below="@+id/Name"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            <TableRow>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Name"/>
 
-        <TextView
-            android:id="@+id/Detail"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/AboutMe"
-            android:layout_below="@+id/Age"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp" />
+                <TextView
+                    android:id="@+id/Name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Age"/>
+
+                <TextView
+                    android:id="@+id/Age"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Gender"/>
+
+                <TextView
+                    android:id="@+id/Gender"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Instrument"/>
+
+                <TextView
+                    android:id="@+id/Instrument"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/AboutMe"
+                    android:layout_weight="2" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/AboutMe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </TableRow>
+        </TableLayout>
+
 
         <Button
             android:layout_width="fill_parent"

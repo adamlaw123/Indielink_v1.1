@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.indielink.indielink.Network.GetProfilePicture;
 
@@ -34,6 +35,12 @@ public class CardBandDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_card_band_detail, container, false);
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.BandProfilePicture);
+
+        //Set Name
+        ((TextView) view.findViewById(R.id.BandName)).setText("UserName");
+
+        //Set Band Name
+        ((TextView) view.findViewById(R.id.AboutMe)).setText("UserGender");
 
         new GetProfilePicture("URL",ProfilePicture).execute();
         // Inflate the layout for this fragment
