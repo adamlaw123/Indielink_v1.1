@@ -24,13 +24,12 @@
         android:layout_gravity="right|top" />
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/editText"
         android:hint="@string/edit_message"
         android:layout_gravity="top|center" />
-
 </FrameLayout>

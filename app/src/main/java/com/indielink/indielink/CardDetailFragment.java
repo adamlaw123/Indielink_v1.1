@@ -35,7 +35,7 @@ public class CardDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_card_band_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_card_detail, container, false);
 
         // Set Profile Image, TODO: put server URL into GetProfilrPicture();
         ImageView ProfilePicture = (ImageView) view.findViewById(R.id.BandProfilePicture);

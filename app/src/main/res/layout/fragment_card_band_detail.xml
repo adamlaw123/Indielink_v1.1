@@ -142,6 +142,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Apply"
             android:id="@+id/RecruitButton"
+            android:theme="@style/AppTheme.AppBarOverlay"
             android:layout_below="@+id/BandVacancyTable"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />

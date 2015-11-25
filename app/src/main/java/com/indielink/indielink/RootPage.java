@@ -170,7 +170,8 @@ public class RootPage extends AppCompatActivity
             {
                 for(BandProfileContent userBand : UserBand)
                 {
-                    if(id == userBand.BandName.hashCode() && CurrentFragment != userBand.BandName) {
+                    if(id == userBand.BandName.hashCode() && CurrentFragment != userBand.BandName)
+                    {
                         fragmentTransaction.addToBackStack(userBand.BandName);
                         fragment = new BandProfileFragment();
                         Bundle bundle = new Bundle();

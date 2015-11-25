@@ -9,15 +9,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.app.DialogFragment;
 
@@ -65,11 +69,6 @@ public class SearchFragment extends Fragment {
         al.add("Libertines");
 
         arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.item, R.id.helloText, al);
-
-
-
-
-
         flingContainer.setAdapter(arrayAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
@@ -85,12 +84,12 @@ public class SearchFragment extends Fragment {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-               //makeToast(SearchFragment.this, "Left!");
+                //makeToast(SearchFragment.this, "Left!");
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-               //makeToast(SearchFragment.this, "Right!");
+                //makeToast(SearchFragment.this, "Right!");
             }
 
             @Override
@@ -110,25 +109,47 @@ public class SearchFragment extends Fragment {
             }
         });
 
+        EditText SearchText = (EditText) view.findViewById(R.id.editText);
+        SearchText.setFocusableInTouchMode(true);
+        SearchText.requestFocus();
+        SearchText.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (actionId == KeyEvent.KEYCODE_ENTER)) {
+                    EditText SearchText = (EditText) v.findViewById(R.id.editText);
+                    String message = SearchText.getText().toString();
+
+                    //Then Perform HTTP POST
+                    return true;
+                }
+                return false;
+            }
+        });
 
         // Optionally add an OnItemClickListener
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
-
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-
+                Bundle bundle = new Bundle();
+                Fragment fragment = null;
                 if(UserRole.GetUserRole()=="")
                 {
-                    fragmentManager.beginTransaction().addToBackStack("CardDetail")
-                            .replace(R.id.frame_container, new CardDetailFragment()).commit();
+                    fragment = new CardBandDetailFragment();
+                    bundle.putString("selectedBand", dataObject.toString());
+                    fragment.setArguments(bundle);
+                    fragmentManager.beginTransaction().addToBackStack("CardBandDetail")
+                            .replace(R.id.frame_container, fragment).commit();
                 }
                 else
                 {
-                    fragmentManager.beginTransaction().addToBackStack("CardBandDetail")
-                            .replace(R.id.frame_container, new CardBandDetailFragment()).commit();
+                    fragment = new CardDetailFragment();
+                    bundle.putString("selectedUser", dataObject.toString());
+                    fragment.setArguments(bundle);
+                    fragmentManager.beginTransaction().addToBackStack("CardDetail")
+                            .replace(R.id.frame_container, new CardDetailFragment()).commit();
                 }
-
             }
         });
         return view;
